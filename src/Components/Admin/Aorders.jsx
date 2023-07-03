@@ -19,13 +19,11 @@ const Aorders = () => {
     ]);
     const getOrders = async () => {
         try {
-            const { data } = await axios.get("http://localhost:5000/api/v1/allorders", {
-
-            });
+            const { data } = await axios.get("https://zwiggy.onrender.com/api/v1/allorders");
             setOrders(data);
             console.log(data);
         } catch (error) {
-            console.error(error);
+            console.log(error);
         }
     };
 

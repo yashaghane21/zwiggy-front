@@ -30,12 +30,13 @@ const Sidebar = () => {
           <ul className={`md:overflow-auto py-5 justify-center itemss-center shadow-md  ${height ? "h-28" : "h-0 overflow-hidden"} bg-white text-gray-500 sm:h-auto transition-all ease-linear duration-300`}>
             <li className='m-1 font-semibold my-3 pl-5 hover:bg-orange-500 hover:text-white'> <Link to="/dashboard/Admindashboard/welcome">Home</Link></li>
             <hr></hr>
+            <li className='m-1 font-semibold my-3 pl-5  hover:bg-orange-500 hover:text-white'> <Link to="/dashboard/Admindashboard/allorders">All orders</Link></li>
             <li className='m-1 font-semibold my-3 pl-5  hover:bg-orange-500 hover:text-white'> <Link to="/dashboard/Admindashboard/allproducts">All Products</Link></li>
             <li className='m-1 font-semibold my-3 pl-5  hover:bg-orange-500 hover:text-white'> <Link to="/dashboard/Admindashboard/add">Add product</Link></li>
             <hr></hr>
             <li className='m-1 font-semibold my-3 pl-5  hover:bg-orange-500 hover:text-white'> <Link to="/dashboard/Admindashboard/profile">Profile</Link></li>
             <hr></hr>
-            <li className='m-1 font-semibold my-3 pl-5  hover:bg-orange-500 hover:text-white'> <Link to="/dashboard/Admindashboard/allorders">All orders</Link></li>
+          
             <hr></hr>
       
            

@@ -18,7 +18,7 @@ const Prodcuts = () => {
     };
 
     const handledelete = async (pid) => {
-        const { data } = await axios.delete(`http://localhost:5000/api/v1/delete/${pid}`)
+        const { data } = await axios.delete(`https://zwiggy.onrender.com/api/v1/delete/${pid}`)
         let answer = window.prompt("are you sure want to delete product");
         if (!answer) return;
         if (data.success) {

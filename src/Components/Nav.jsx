@@ -47,15 +47,15 @@ const Nav = () => {
                     <>
 
 
-                        <button className='pr-[30px] text-gray-500  hover:text-orange-500 font-bold p-1 text-center' onClick={() => navigate("/login")}>Login</button>
+                        <button className='pr-[30px] text-gray-500  hover:text-orange-500 font-bold p-1  absolute left-[200px] md:left-[1400px] text-center' onClick={() => navigate("/login")}>Login</button>
                     </>
                 ) : (
                     <>
                         
                  {auth.user?.role === 1 ? (
                     <>
-                    <section className='flex flex-row-reverse absolute left-[200px] md:left-[1200px]' >
-                            <img src={userp} alt='dff' className='h-[40px] px-2   ' />
+                    <section className='flex flex-row-reverse absolute left-[150px] md:left-[1400px]' >
+                            <img src={userp} alt='dff' className='h-[30px]   mt-1 ' />
                             <Link to="/dashboard/Admindashboard/profile"><h1 className='px-2 mt-2 font-bold hover:text-orange-500'  >
                                 {auth?.user?.name} </h1>
                             </Link>
@@ -65,7 +65,7 @@ const Nav = () => {
                     </>
                  ):(
                     <>
-                    <section className='flex flex-row-reverse absolute left-[200px] md:left-[1200px]' >
+                    <section className='flex flex-row-reverse absolute left-[150px] md:left-[1300px]' >
                             <img src={userp} alt='dff' className='h-[40px] px-2   ' />
                             <Link to="/udashboard/Userdashboard/profile"><h1 className='px-2 mt-2 font-bold hover:text-orange-500'  >
                                 {auth?.user?.name} </h1>
@@ -95,7 +95,7 @@ const Nav = () => {
             <div >
                 <ul className={`sm:flex justify-center items-center shadow-md gap-2 ${height ? "h-35" : "h-0 overflow-hidden"} sm:h-auto transition-all ease-linear duration-300`}>
                     <div className='flex  '>
-                        <img src={kk} className='h-5  mt-2' />
+                        
                         <li className='m-1  font-bold ml-2 text-gray-500 flex hover:text-orange-500'> <Link to="/"> Home</Link></li>
 
                     </div>
@@ -104,7 +104,7 @@ const Nav = () => {
                         <div className=''>
 
                         </div>
-                        <Link to="/cart" className='flex mt-1 pl-2  pb-1 font-bold text-gray-500 hover:text-orange-500'> <BsFillCartPlusFill /> Cart  </Link>
+                        <Link to="/cart" className='m-1  font-bold ml-2 text-gray-500 flex hover:text-orange-500'>  Cart  </Link>
                     </li>
                     {auth.user ? (
                         <>
@@ -127,7 +127,14 @@ const Nav = () => {
                         </>
                     )}
 
-
+                   {!auth.user ?(
+                    <>
+                    <li className='m-1  font-bold ml-2 text-gray-500 flex hover:text-orange-500'> <Link to="/signup" >Register</Link></li>
+                    </>
+                   ):(
+                    <>
+                    </>
+                   )}
 
 
 
