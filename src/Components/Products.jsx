@@ -52,7 +52,7 @@ const Products = () => {
                         )}
                         <div className='flex justify-center'>
 
-                            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 overflow-hidden h-auto  mt-3 sm:gap-[70px] md:gap-[70px] pb-[200px] pl-7   '>
+                            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 overflow-hidden h-auto  mt-3 sm:gap-[70px] md:gap-[70px] pb-[200px]    '>
 
 
                                 {products?.map((p) => (
