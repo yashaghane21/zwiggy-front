@@ -40,11 +40,11 @@ const Login = () => {
   }
   return (
     <div className='flex flex-col sm:flex-row mt-5 h-screen '>
-      <div className=' sm:w-1/2 w-full p-5 mt-[25px]'>
-        <img src={img} className='md:h-[60%] md:w-[60%] sm:h-full mt-5 sm:w-full' />
+      <div className='w-[80%] sm:w-[40%] md:w-[50%] flex sm:justify-center h-[50vh] sm:h-[25vh] md:h-[70%]'>
+        <img src={img} className='mt-5' />
       </div>
-      <div className='sm:w-[50px]  md:w-[450px] pl-8  pt-5 h-[350px] md:mt-[100px] border-2 rounded-2xl hover:shadow-2xl'>
-        <form className=' md:pl-[50px] items-center' onSubmit={handlesubmit}>
+      <div className='sm:w-[50px]  md:w-[450px]  pr-5  flex justify-center pt-5 h-[350px] md:mt-[100px] rounded-2xl hover:shadow-2xl'>
+        <form className=' md:pl-[50px] items-center   sm:justify-end ' onSubmit={handlesubmit}>
           <label className='text-lg font-semibold m-1 flex'>Email</label>
           <div className='flex'>
             <input type='text' className='w-[250px]  h-10 rounded-md p-1 border-2 border-yellow-200'
@@ -61,8 +61,8 @@ const Login = () => {
             onChange={(e) => {
               setpassword(e.target.value)
             }} /><br />
-          <div className='p-5 ml-15 m-2'>
-            <button className='bg-yellow-500 text-white  m-2 py-1 px-5 rounded-md absolute md:left-[900px]'>Submit</button>
+          <div className='p-5 ml-[50px] m-2'>
+            <button className='bg-yellow-500 text-white  m-2 py-1 px-5 rounded-md absolute '>Submit</button>
 
           </div>
           <h1 className='mt-[25px] pl-[10px] font-bold '>Not registerd ? <Link to="/signup" className='text-orange-500'>  Register Here</Link></h1>

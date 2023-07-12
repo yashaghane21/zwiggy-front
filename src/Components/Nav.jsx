@@ -47,7 +47,7 @@ const Nav = () => {
                     <>
 
 
-                        <button className='pr-[30px] text-gray-500  hover:text-orange-500 font-bold p-1  absolute left-[200px] md:left-[1400px] text-center' onClick={() => navigate("/login")}>Login</button>
+                        <button className=' text-gray-500  hover:text-orange-500 font-bold p-1  absolute right-[100px] sm:right-[10px] md:right-[00px]' onClick={() => navigate("/login")}>Login</button>
                     </>
                 ) : (
                     <>
@@ -84,7 +84,7 @@ const Nav = () => {
 
 
 
-                <section onClick={handletoggle} className='sm:hidden absolute right-5 '>
+                <section onClick={handletoggle} className='sm:hidden absolute right-[20px] '>
                     {height ? <ImCancelCircle size={23} /> : <GiHamburgerMenu size={23} />}
                 </section>
 
