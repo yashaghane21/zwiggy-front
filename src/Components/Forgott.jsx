@@ -3,6 +3,7 @@ import React from 'react'
 import { useState } from 'react'
 import { Link, useNavigate } from "react-router-dom"
 import { toast } from 'react-toastify'
+import fpass from "../assets/fpass.png"
 
 const Forgott = () => {
      const navigate=useNavigate()
@@ -25,9 +26,10 @@ const Forgott = () => {
         }
     }
   return (
-    <div>
-        <div className='absolute top-[180px] left-[40px] md:left-[500px] md:pr-[60px] border-2 h-[300px] px-5  pt-5  rounded-2xl hover:shadow-2xl'>
-        <form className=' md:pl-[50px] items-center' onClick={handle}>
+    <div className='flex justify-center '>
+     
+        <div className='absolute top-[180px]    border-2 h-[300px] px-5  pt-5  rounded-2xl hover:shadow-2xl'>
+        <form className=' md:pl-[50px] items-center md:pr-5 ' onClick={handle}>
           <label className='text-lg font-semibold m-1 flex'>Email</label>
           <div className='flex'>
             <input type='text' className='w-[250px]  h-10 rounded-md p-1 border-2 border-yellow-200'

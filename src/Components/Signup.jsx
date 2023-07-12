@@ -48,11 +48,11 @@ const Signup = () => {
        
     }
   return (
-    <div className='flex flex-col sm:flex-row mt-5 h-screen '>
+    <div className='flex flex-col sm:flex-row mt-5 h-screen  justify-center '>
       <div className=' sm:w-1/2 w-full p-5 mt-[25px]'>
-        <img src={img} className='md:h-[60%] md:w-[60%] sm:h-full mt-5 sm:w-full' />
+        <img src={img} className='md:h-[60%] md:w-[60%] sm:h-[50%] mt-5 sm:w-full' />
       </div>
-      <div className='sm:w-[50px]  md:w-[450px] p-5  h-[600px]  border-2 rounded-2xl hover:shadow-2xl'>
+      <div className='sm:w-[50px]  md:w-[450px] p-5  h-[600px] flex justify-center border-2 rounded-2xl hover:shadow-2xl'>
         <form className=' md:pl-[50px] items-center' onSubmit={handlesubmit}>  
 
           <label className='text-lg font-semibold m-1 flex'>Name</label>
@@ -99,10 +99,10 @@ const Signup = () => {
 
 
           <div className='p-5 ml-10 m-2'>
-            <button className='bg-yellow-500 text-white  m-2 py-1 px-5 rounded-md absolute md:left-[850px]'>Register</button>
+            <button className='bg-yellow-500 text-white  m-2 py-1 px-5 rounded-md absolute '>Register</button>
 
           </div>
-          <h1 className='mt-[25px] pl-[40px] font-bold '>Already Registered? <Link to="/login" className='text-orange-500'>  Login Here</Link></h1>
+          <h1 className='mt-[25px] pl-[20px] font-bold '>Already Registered? <Link to="/login" className='text-orange-500'>  Login Here</Link></h1>
 
         </form>
 

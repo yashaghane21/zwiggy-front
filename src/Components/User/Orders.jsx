@@ -35,7 +35,8 @@ const Orders = () => {
           <>
             <img src={ecart} alt='ddf' className='md:h-[500px] md:w-full w-[300px] h-[250px] pl-[80px]' />
           </> :
-          <div className='items-center justify-center grid grid-cols-1 md:grid-cols-3 bg-slate-30 absolute top-[250px] md:pl-[250px]'>
+          <div className='flex justify-center'>
+              <div className='items-center justify-center  grid grid-cols-1 md:grid-cols-3 bg-slate-30 absolute top-[250px] md:pl-[250px]'>
             {orders?.map((item, index) => (
               <div className='border-2 border-gray-200 rounded-2xl gap-4 m-2 pb-4 hover:shadow-2xl' key={index}>
                 <div className='h-90 mx-auto md:flex rounded-2xl'>
@@ -63,6 +64,8 @@ const Orders = () => {
               </div>
             ))}
           </div>
+            </div>
+        
       }
     </div>
   );

@@ -11,9 +11,10 @@ const Profile = () => {
       <div>
         <Sidebar />
       </div>
-
-      <div className='absolute top-[250px]   '>
-            <img src={uicon} alt='ff' className='h-[100px] pl-[120px] md:pl-[700px] ' />
+ <div>
+  <div className='absolute top-[250px]   '>
+    <div>
+    <img src={uicon} alt='ff' className='h-[100px] pl-[120px] md:pl-[700px] ' />
             <div className='pl-[80px] md:pl-[650px]'>
                 
                 <h1 className='font-bold text-xl pl-2 '   > Hey ! {auth?.user?.name}</h1> 
@@ -36,7 +37,11 @@ const Profile = () => {
                 
                 
             </div>
+    </div>
+          
       </div>
+ </div>
+    
     </div>
   )
 }

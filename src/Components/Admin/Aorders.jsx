@@ -53,7 +53,8 @@ const Aorders = () => {
 
             <div className='items-center justify-center grid grid-cols-1 md:grid-cols-3 bg-slate-30 absolute top-[250px] md:pl-[250px]'>
                 {orders?.map((item, index) => (
-                    <div className='border-2 border-gray-200  rounded-2xl gap-4 m-2 pb-4 hover:shadow-2xl' key={index}>
+                    <div className='flex justify-center'>
+                         <div className='border-2 border-gray-200  rounded-2xl gap-4 m-2 pb-4 hover:shadow-2xl' key={index}>
                         <div className='h-90 mx-auto md:flex rounded-2xl'>
                             <div>
                                 {item.products.map((product) => (
@@ -95,7 +96,10 @@ const Aorders = () => {
                               
                             </div>
                         </div>
-                    </div>
+                        </div>
+                        </div>
+                   
+                   
                 ))}
             </div>
         </div >

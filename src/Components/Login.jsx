@@ -17,26 +17,35 @@ const Login = () => {
       "email": email,
       "password": password
     }
-    const { data } = await axios.post("https://zwiggy.onrender.com/api/v2/login", {
-      email: datta.email,
-      password: datta.password
-    });
-    console.log(data)
-    if (data.success) {
-      toast.success("Login Succesfully");
-      localStorage.setItem("userid",data?.user._id)
-      navigate("/")
-      setauth({
-        ...auth,
-        user: data.user,
-        token: data.token
+    try {
+      const { data } = await axios.post("https://zwiggy.onrender.com/api/v2/login", {
+        email: datta.email,
+        password: datta.password
       });
-      localStorage.setItem("auth", JSON.stringify(data));
-    }
-    else {
-      alert("wrong email or password")
-    }
-
+      console.log(data)
+      if (data.success) {
+        toast.success("Login Succesfully");
+        localStorage.setItem("userid",data?.user._id)
+        navigate("/")
+        setauth({
+          ...auth,
+          user: data.user,
+          token: data.token
+        });
+        localStorage.setItem("auth", JSON.stringify(data));
+      }
+      else {
+        toast.warn("wrong email or password")
+      }
+  
+    }catch (error) {
+      if (error.response && error.response.data && error.response.data.message) {
+          toast.error(error.response.data.message);
+      } else {
+          toast.error("An error occurred:", error.message);
+      }
+  }
+   
   }
   return (
     <div className='flex flex-col sm:flex-row mt-5 h-screen '>
@@ -66,7 +75,7 @@ const Login = () => {
 
           </div>
           <h1 className='mt-[25px] pl-[10px] font-bold '>Not registerd ? <Link to="/signup" className='text-orange-500'>  Register Here</Link></h1>
-              <h1 className='pl-[50px] font-bold ' > <Link to="/fpass" >Forgot password</Link></h1>
+              <h1 className='pl-[50px] font-bold text-red-500' > <Link to="/fpass" >Forgot password</Link></h1>
         </form>
 
 

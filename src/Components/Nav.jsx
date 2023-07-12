@@ -65,7 +65,7 @@ const Nav = () => {
                     </>
                  ):(
                     <>
-                    <section className='flex flex-row-reverse absolute left-[210px] sm:right-[50px] ' >
+                    <section className='flex flex-row-reverse absolute left-[190px] sm:right-[50px] ' >
                             <img src={userp} alt='dff' className='h-[40px] px-2   ' />
                             <Link to="/udashboard/Userdashboard/profile"><h1 className='px-2 mt-2 font-bold hover:text-orange-500'  >
                                 {auth?.user?.name} </h1>
