@@ -3,8 +3,7 @@ import axios from "axios"
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../Context/Auth'
 import { toast } from 'react-toastify'
-import { CircularProgressbar } from "react-circular-progressbar"
-
+import { Puff } from "react-loader-spinner"
 
 const Products = () => {
     const navigate = useNavigate()
@@ -13,18 +12,27 @@ const Products = () => {
     const [loader, setloader] = useState(false)
     const getproducts = async () => {
         setloader(true)
-        const response = await axios.get("https://zwiggy.onrender.com/api/v2/all-products");
+        try {
+            const response = await axios.get("https://zwiggy.onrender.com/api/v2/all-products");
 
-        setproducts(response.data.allproducts)
+            setproducts(response.data.allproducts)
+
+        } catch (error) {
+            alert(error)
+        }
+
         setloader(false)
     };
 
 
 
     useEffect(() => {
-        if (getproducts()) {
+        setloader(true)
+        setTimeout(() => {
+            getproducts();
+            setloader(false)
+        }, 3000);
 
-        }
 
     }, [])
 
@@ -33,13 +41,18 @@ const Products = () => {
     return (
         <div>
             <div>
-                {(loader ? <section className='flex justify-center '><CircularProgressbar size={80} color="orange " /></section>
 
-                    :
-
-
-                    <>
-
+                {loader ?
+                    <div className='flex flex-row justify-center h-screen mt-[150px] sm:items-center'>
+                        <Puff height="80"
+                            width="80" 
+                            radius={1}
+                            color='orange'
+                            ariaLabel='puff-loading'
+                            wrapperStyle={{}}
+                            visible={true}
+                        />
+                    </div> : <>
                         {!auth.user ? (
                             <>
                                 <h5 className='text-center text-3xl font-sans font-bold mt-2 uppercase '>WELCOME </h5>
@@ -85,9 +98,12 @@ const Products = () => {
                             </div>
                         </div>
 
-
                     </>
-                )}
+                }
+
+
+
+
             </div>
         </div>
     )
