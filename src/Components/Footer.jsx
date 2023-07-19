@@ -8,7 +8,7 @@ const Footer = () => {
       </div>
 
       <div>
-        <p className='text-white font-bold text-center pt-3'>Developed by @yash aghane</p>
+        <p className='text-white font-bold text-center pt-3'>Developed by @yash aghane & Dnyan yendhe</p>
       </div>
 
 
