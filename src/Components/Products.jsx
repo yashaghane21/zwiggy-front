@@ -13,25 +13,24 @@ const Products = () => {
     const getproducts = async () => {
         setloader(true)
         try {
+        try {
             const response = await axios.get("https://zwiggy.onrender.com/api/v2/all-products");
 
             setproducts(response.data.allproducts)
+setloader(false)
 
         } catch (error) {
             alert(error)
         }
 
-        setloader(false)
+        
     };
 
 
 
     useEffect(() => {
-        setloader(true)
-        setTimeout(() => {
-            getproducts();
-            setloader(false)
-        }, 3000);
+        getproducts();
+       
 
 
     }, [])
