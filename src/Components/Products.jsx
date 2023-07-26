@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import axios from "axios"
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../Context/Auth'
-import { toast } from 'react-toastify'
 import { Puff } from "react-loader-spinner"
 
 const Products = () => {
@@ -12,25 +11,30 @@ const Products = () => {
     const [loader, setloader] = useState(false)
     const getproducts = async () => {
         setloader(true)
-        try {
+
         try {
             const response = await axios.get("https://zwiggy.onrender.com/api/v2/all-products");
 
             setproducts(response.data.allproducts)
-setloader(false)
+            setloader(false)
 
         } catch (error) {
             alert(error)
         }
 
-        
+
     };
 
 
 
     useEffect(() => {
-        getproducts();
-       
+        setloader(true)
+        setTimeout(() => {
+            getproducts();
+            setloader(false)
+        }, 5000);
+
+
 
 
     }, [])
@@ -44,7 +48,7 @@ setloader(false)
                 {loader ?
                     <div className='flex flex-row justify-center h-screen mt-[150px] sm:items-center'>
                         <Puff height="80"
-                            width="80" 
+                            width="80"
                             radius={1}
                             color='orange'
                             ariaLabel='puff-loading'
