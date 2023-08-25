@@ -9,6 +9,7 @@ const Products = () => {
     const [products, setproducts] = useState([])
     const [auth, setauth] = useAuth();
     const [loader, setloader] = useState(false)
+
     const getproducts = async () => {
         setloader(true)
 
@@ -22,22 +23,19 @@ const Products = () => {
             alert(error)
         }
 
-
+           setloader(false)
     };
 
 
 
-    useEffect(() => {
-        setloader(true)
-        setTimeout(() => {
-            getproducts();
-            setloader(false)
-        }, 5000);
+useEffect(()=>{
+    getproducts()
+},[])
 
 
 
 
-    }, [])
+  
 
 
 
